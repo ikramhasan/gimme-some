@@ -8,7 +8,6 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Gimme Some',
       theme: ThemeData(
-        canvasColor: Colors.transparent,
         primarySwatch: Colors.blue,
       ),
       home: HomePage(),

@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gimme_some/src/screens/about.dart';
 import 'package:gimme_some/src/services/api_service.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -104,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       child: Container(
                         height: height * 0.0598,
-                        width: width * 0.5,
+                        width: width < 750 ? width * 0.5 : 375,
                         child: Center(
                           child: Text(
                             'gimme',
@@ -117,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
+                          borderRadius: BorderRadius.circular(8),
                           color: Colors.white,
                           border: Border.all(
                             color: Colors.blue,
@@ -129,6 +131,33 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+            ),
+          ),
+          Positioned(
+            top: 32,
+            right: 16,
+            child: InkWell(
+              child: FaIcon(
+                FontAwesomeIcons.infoCircle,
+                size: 40,
+                semanticLabel: 'Info',
+                color: Colors.blue,
+              ),
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: Text(
+                      'gimme some',
+                      style: TextStyle(
+                        fontFamily: 'AlbaSuper',
+                        color: Colors.blue,
+                      ),
+                    ),
+                    content: AboutPage(),
+                  ),
+                );
+              },
             ),
           ),
         ],
