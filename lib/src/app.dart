@@ -9,7 +9,6 @@ class App extends StatelessWidget {
       title: 'Gimme Some',
       theme: ThemeData(
         canvasColor: Colors.transparent,
-        fontFamily: 'Sans',
         primarySwatch: Colors.blue,
       ),
       home: HomePage(),

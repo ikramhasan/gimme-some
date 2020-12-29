@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:gimme_some/src/services/api_service.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -35,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    
+
     return Scaffold(
       body: Stack(
         children: [
@@ -83,8 +84,10 @@ class _HomePageState extends State<HomePage> {
                                     child: TypewriterAnimatedTextKit(
                                       isRepeatingAnimation: false,
                                       text: [advice],
-                                      textStyle: TextStyle(
-                                          fontSize: 30, color: Colors.white),
+                                      textStyle: GoogleFonts.comfortaa(
+                                        fontSize: 30,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -106,6 +109,7 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                             'gimme',
                             style: TextStyle(
+                              fontFamily: 'AlbaSuper',
                               color: Colors.blue,
                               fontSize: 22,
                               fontStyle: FontStyle.italic,
